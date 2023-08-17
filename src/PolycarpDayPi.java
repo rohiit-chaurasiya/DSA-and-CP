@@ -1,0 +1,108 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+
+public class PolycarpDayPi
+{
+    static class FastkReader{
+        BufferedReader br;
+        StringTokenizer st;
+        public FastkReader()
+        {
+            br=new BufferedReader(new InputStreamReader(System.in));
+        }
+        String next()
+        {
+            while(st==null || !st.hasMoreTokens())
+            {
+                try {
+                    st=new StringTokenizer(br.readLine());
+                }
+                catch(IOException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
+        int nextInt() {
+            return Integer.parseInt(next());
+        }
+        long nextLong() {
+            return Long.parseLong(next());
+        }
+        double nextDouble() {
+            return Double.parseDouble(next());
+        }
+        String nextLine() {
+            String str="";
+            try {
+                str=br.readLine().trim();
+            }
+            catch(Exception e) {
+                e.printStackTrace();
+            }
+            return str;
+        }
+    }
+    static class FastkWriter{
+        private final BufferedWriter bw;
+        public FastkWriter()
+        {
+            this.bw=new BufferedWriter(new OutputStreamWriter(System.out));
+        }
+        public void print(Object object)throws IOException{
+            bw.append(""+object);
+        }
+        public void println(Object object)throws IOException{
+            print(object);
+            bw.append("\n");
+        }
+        public void close()throws IOException {
+            bw.close();
+
+        }
+
+    }
+
+    public static void main(String r[])
+    {
+//        try
+//        {
+            FastkReader in =new FastkReader();
+            FastkWriter out=new FastkWriter();
+
+            int test=in.nextInt();
+            if(test>=1 && test<=1000)
+            {
+                while(test>0) {
+                    String lena=in.next();
+                    String str="314159265358979323846264338327";
+                    long len=str.length();
+                    long temp=0;
+                    for(long i=0;i<len;i++)
+                    {
+                        if(lena.charAt((int)i)==str.charAt((int)i))
+                        {
+                            temp+=1;
+                        }else{
+                            break;
+                        }
+                    }
+                    System.out.println(temp);
+
+                    test--;
+                }
+            }
+//            out.close();
+//        }
+//        catch(Exception ex)
+//        {
+//            System.err.println("Error");
+//        }
+
+    }
+}
+
+
