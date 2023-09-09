@@ -4,7 +4,7 @@ import java.io.*;
 
 
 public class AB_CF
-{
+{ 
     static class FastkReader{
         BufferedReader br;
         StringTokenizer st;
